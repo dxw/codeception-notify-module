@@ -1,0 +1,13 @@
+# Codeception Test Suite Configuration
+#
+# Suite for unit or integration tests.
+
+actor: UnitTester
+modules:
+    enabled:
+        - Asserts
+        - \Helper\Unit
+        - \dxw\Codeception\Module\Notify:
+            host: 0.0.0.0
+            port: 18080
+            resetBeforeEachTest: true # recommend setting this to true for predictable results

@@ -1,0 +1,18 @@
+{
+  "name": "dxw/codeception-notify-module",
+  "description": "Assertions for acceptance testing an application that uses Gov.uk Notify",
+  "autoload": {
+    "psr-4": {
+      "dxw\\Codeception\\Module\\": "src"
+    }
+  },
+  "require": {
+    "mcustiel/phiremock-codeception-extension": "*"
+  },
+  "minimum-stability": "dev",
+  "require-dev": {
+    "codeception/codeception": "2.6.x-dev",
+    "php-http/guzzle6-adapter": "^2.0@dev",
+    "alphagov/notifications-php-client": "dev-master"
+  }
+}

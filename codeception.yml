@@ -1,0 +1,17 @@
+paths:
+    tests: tests
+    output: tests/_output
+    data: tests/_data
+    support: tests/_support
+    envs: tests/_envs
+actor_suffix: Tester
+extensions:
+    enabled:
+        - Codeception\Extension\RunFailed
+        - \Codeception\Extension\Phiremock
+    config:
+        \Codeception\Extension\Phiremock:
+            listen: 0.0.0.0:18080 # defaults to 0.0.0.0:8086
+            bin_path: vendor/bin # defaults to codeception_dir/../vendor/bin 
+            debug: true # defaults to false
+            startDelay: 1 # default to 0
