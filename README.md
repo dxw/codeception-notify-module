@@ -1,10 +1,14 @@
 # codeception-notify-module
 
-A Codeception module that extends [phiremock-codeception-extension](https://github.com/mcustiel/phiremock-codeception-extension) for testing applications that call GOV.UK Notify.
+A Codeception module that extends [phiremock-codeception-extension](https://github.com/mcustiel/phiremock-codeception-extension) for testing applications that call GOV.UK Notify. 
+
+The Phiremock extension is included in this module, so does not need to be installed separately.
 
 ## Installation
 
-[This will probably be via composer. Will minimum-stability need to be "dev" as per phiremock extension readme?]
+```bash
+composer require --dev robjs/codeception-notify-module
+```
 
 ## How to use 
 
