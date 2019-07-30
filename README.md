@@ -7,7 +7,7 @@ The Phiremock extension is included in this module, so does not need to be insta
 ## Installation
 
 ```bash
-composer require --dev robjs/codeception-notify-module
+composer require --dev dxw/codeception-notify-module
 ```
 
 ## How to use 

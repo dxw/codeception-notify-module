@@ -1,5 +1,5 @@
 {
-  "name": "robjs/codeception-notify-module",
+  "name": "dxw/codeception-notify-module",
   "description": "Codeception module for acceptance testing an application that uses Gov.uk Notify",
   "version": "0.1.0",
   "license": "MIT",
