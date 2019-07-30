@@ -1,6 +1,6 @@
 {
   "name": "robjs/codeception-notify-module",
-  "description": "Assertions for acceptance testing an application that uses Gov.uk Notify",
+  "description": "Codeception module for acceptance testing an application that uses Gov.uk Notify",
   "version": "0.1.0",
   "license": "MIT",
   "authors": [
@@ -19,10 +19,9 @@
     "php": ">=7.0",
     "mcustiel/phiremock-codeception-extension": "*"
   },
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "require-dev": {
-    "codeception/codeception": "2.6.x-dev",
-    "php-http/guzzle6-adapter": "^2.0@dev",
-    "alphagov/notifications-php-client": "dev-master"
+    "codeception/codeception": ">2.0",
+    "alphagov/notifications-php-client": "^1.0"
   }
 }
