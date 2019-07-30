@@ -1,5 +1,5 @@
 {
-  "name": "dxw/codeception-notify-module",
+  "name": "robjs/codeception-notify-module",
   "description": "Assertions for acceptance testing an application that uses Gov.uk Notify",
   "autoload": {
     "psr-4": {
@@ -7,6 +7,7 @@
     }
   },
   "require": {
+    "php": "^7.0",
     "mcustiel/phiremock-codeception-extension": "*"
   },
   "minimum-stability": "dev",
