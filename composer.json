@@ -17,7 +17,7 @@
   },
   "require": {
     "php": ">=7.0",
-    "mcustiel/phiremock-codeception-extension": "*"
+    "mcustiel/phiremock-codeception-extension": "^1.6"
   },
   "minimum-stability": "stable",
   "require-dev": {
