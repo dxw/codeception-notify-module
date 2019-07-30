@@ -57,7 +57,7 @@ Allows you to specify that a request to the email endpoint should receive a 401 
 $I->expectEmailRequestWithFailureResponse();
 ```
 
-### getRecipientEmailAddresses
+#### getRecipientEmailAddresses
 
 Returns a chronological array of all email addresses that emails have been sent to.
 
@@ -65,7 +65,7 @@ Returns a chronological array of all email addresses that emails have been sent 
 $recipients = $I->getRecipientEmailAddresses();
 ```
 
-### seeLastEmailWasSentTo
+#### seeLastEmailWasSentTo
 
 Verifies if the last request was sent to the email address you provide.
 
@@ -73,7 +73,7 @@ Verifies if the last request was sent to the email address you provide.
 $I->seeLastEmailWasSentTo('address@domain.com');
 ```
 
-### seeNotifyReceivedEmailRequests
+#### seeNotifyReceivedEmailRequests
 
 Verifies how any email requests have been sent to Notify.
 
