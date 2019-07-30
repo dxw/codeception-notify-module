@@ -12,6 +12,8 @@ composer require --dev dxw/codeception-notify-module
 
 ## How to use 
 
+Currently the module only tests requests to the Notify email endpoint.
+
 ### Setup
 
 Configure the Phiremock extension in your codeception.yml to start the Phiremock server. You'll need to modify your Notify config so it hits this mock server when in the testing environment.
@@ -55,11 +57,19 @@ $I->expectEmailRequestWithSuccessResponse();
 
 #### expectEmailRequestWithFailureResponse
 
-Allows you to specify that a request to the email endpoint should receive a 401 response.
+Allows you to specify that a request to the email endpoint should receive a 401 response. You can use this if you're handling all failure responses in the same way.
 
 ```php
 $I->expectEmailRequestWithFailureResponse();
 ```
+
+You can also specify the error code and body that should be returned, e.g.
+
+```php 
+$I->expectEmailRequestWithFailureResponse(403, '{"errors":[{"error":"AuthError", "message":"Invalid token"}]}');
+```
+
+Note that the body must be in the format expected by the [AlphaGov\Notifications\Exception\ApiException class](https://github.com/alphagov/notifications-php-client/blob/master/src/Exception/ApiException.php) otherwise the Notify client will error.
 
 #### getRecipientEmailAddresses
 
@@ -97,6 +107,12 @@ Run the tests:
 
 ```bash 
 vendor/bin/codecept run unit 
+```
+
+Run the linter:
+
+```bash
+vendor/bin/php-cs-fixer fix 
 ```
 
 
