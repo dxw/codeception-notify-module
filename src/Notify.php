@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace dxw\Codeception\Module;
 
@@ -7,7 +7,7 @@ use Mcustiel\Phiremock\Client\Utils\A;
 use Mcustiel\Phiremock\Client\Utils\Is;
 use Mcustiel\Phiremock\Client\Utils\Respond;
 
-class Notify extends \Codeception\Module\Phiremock 
+class Notify extends \Codeception\Module\Phiremock
 {
     private $phiremock;
     

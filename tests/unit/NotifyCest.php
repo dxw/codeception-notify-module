@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class NotifyCest
 {
@@ -24,7 +24,7 @@ class NotifyCest
     public function mockFailureResponseThrowsException(UnitTester $I)
     {
         $I->expectEmailRequestWithFailureResponse();
-        $I->expectException(Alphagov\Notifications\Exception\ApiException::class, function () {        
+        $I->expectException(Alphagov\Notifications\Exception\ApiException::class, function () {
             $this->notifyClient->sendEmail(
                 'betty@example.com',
                 'df10a23e-2c0d-4ea5-87fb-82e520cbf93c'
@@ -86,9 +86,9 @@ class NotifyCest
             'betty@example.com',
             'df10a23e-2c0d-4ea5-87fb-82e520cbf93c'
         );
-        $I->expectException(PHPUnit\Framework\Exception::class, function () {        
+        $I->expectException(PHPUnit\Framework\Exception::class, function () {
             $I->seeLastEmailWasSentTo('foo@bar.com');
-        });    
+        });
     }
     
     public function seeNotifyReceivedEmailRequestsPassesWithCorrectNumber(UnitTester $I)
@@ -109,22 +109,22 @@ class NotifyCest
     
     public function seeNotifyReceivedEmailRequestsFailsWithIncorrectNumber(UnitTester $I)
     {
-        $I->expectException(PHPUnit\Framework\Exception::class, function () {        
+        $I->expectException(PHPUnit\Framework\Exception::class, function () {
             $I->seeNotifyReceivedEmailRequests(1);
-        });    
+        });
         $I->expectEmailRequestWithSuccessResponse();
         $this->notifyClient->sendEmail(
             'betty@example.com',
             'df10a23e-2c0d-4ea5-87fb-82e520cbf93c'
         );
-        $I->expectException(PHPUnit\Framework\Exception::class, function () {        
+        $I->expectException(PHPUnit\Framework\Exception::class, function () {
             $I->seeNotifyReceivedEmailRequests(0);
         });
         $this->notifyClient->sendEmail(
             'foo@bar.com',
             'df10a23e-2c0d-4ea5-87fb-82e520cbf93c'
         );
-        $I->expectException(PHPUnit\Framework\Exception::class, function () {        
+        $I->expectException(PHPUnit\Framework\Exception::class, function () {
             $I->seeNotifyReceivedEmailRequests(3);
         });
     }

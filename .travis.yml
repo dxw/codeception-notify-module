@@ -14,4 +14,5 @@ install:
   - composer --no-interaction install
 script:
   - vendor/bin/codecept run unit
+  - vendor/bin/php-cs-fixer fix --dry-run -v --diff
   
