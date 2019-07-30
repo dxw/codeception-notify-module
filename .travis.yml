@@ -1,0 +1,17 @@
+language: php
+sudo: false
+git:
+  submodules: false
+cache:
+  directories:
+    - vendor
+php:
+  - 7.0
+  - 7.1
+  - 7.2
+  - 7.3
+install:
+  - composer --no-interaction install
+script:
+  - vendor/bin/codecept run unit
+  
