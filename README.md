@@ -55,6 +55,12 @@ Allows you to specify that a request to the email endpoint should receive a 200 
 $I->expectEmailRequestWithSuccessResponse();
 ```
 
+You can also specify what the response body should be (in JSON format): 
+
+```php 
+$I->expectEmailRequestWithSuccessResponse('{"response":"body"}');
+```
+
 #### expectEmailRequestWithFailureResponse
 
 Allows you to specify that a request to the email endpoint should receive a 401 response. You can use this if you're handling all failure responses in the same way.

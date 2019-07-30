@@ -12,13 +12,24 @@ class NotifyCest
     }
 
     // tests
-    public function mockSuccessResponseDoesNotThrowException(UnitTester $I)
+    public function mockDefaultSuccessResponseDoesNotThrowException(UnitTester $I)
     {
         $I->expectEmailRequestWithSuccessResponse();
-        $this->notifyClient->sendEmail(
+        $responseBody = $this->notifyClient->sendEmail(
             'betty@example.com',
             'df10a23e-2c0d-4ea5-87fb-82e520cbf93c'
         );
+        $I->assertEquals(['foo' => 'bar'], $responseBody);
+    }
+    
+    public function mockCustomSuccessResponseDoesNotThrowExceptionAndReturnsCustomBody(UnitTester $I)
+    {
+        $I->expectEmailRequestWithSuccessResponse('{"acustom":"response"}');
+        $responseBody = $this->notifyClient->sendEmail(
+            'betty@example.com',
+            'df10a23e-2c0d-4ea5-87fb-82e520cbf93c'
+        );
+        $I->assertEquals(['acustom' => 'response'], $responseBody);
     }
     
     public function mockFailureResponseThrowsDefaultException(UnitTester $I)
