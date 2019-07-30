@@ -21,10 +21,21 @@ class NotifyCest
         );
     }
     
-    public function mockFailureResponseThrowsException(UnitTester $I)
+    public function mockFailureResponseThrowsDefaultException(UnitTester $I)
     {
         $I->expectEmailRequestWithFailureResponse();
-        $I->expectException(Alphagov\Notifications\Exception\ApiException::class, function () {
+        $I->expectException(new Alphagov\Notifications\Exception\ApiException("HTTP:401", 401, json_decode('{"errors":[{"error":"foo", "message":"bar"}]}', true), new \GuzzleHttp\Psr7\Response(401, [], '{"errors":[{"error":"foo", "message":"bar"}]}')), function () {
+            $this->notifyClient->sendEmail(
+                'betty@example.com',
+                'df10a23e-2c0d-4ea5-87fb-82e520cbf93c'
+            );
+        });
+    }
+    
+    public function mockFailureResponseWithCustomCodeAndBodyThrowsCustomException(UnitTester $I)
+    {
+        $I->expectEmailRequestWithFailureResponse(403, '{"errors":[{"error":"the first", "message":"the message"}]}');
+        $I->expectException(new \Alphagov\Notifications\Exception\ApiException("HTTP:403", 403, json_decode('{"errors":[{"error":"the first",  "message":"the message"}]}', true), new GuzzleHttp\Psr7\Response(403, [], '{"errors":[{"error":"the first",  "message":"the message"}]}')), function () {
             $this->notifyClient->sendEmail(
                 'betty@example.com',
                 'df10a23e-2c0d-4ea5-87fb-82e520cbf93c'

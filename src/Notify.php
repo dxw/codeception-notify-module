@@ -13,24 +13,24 @@ class Notify extends \Codeception\Module\Phiremock
     
     const EMAIL_ENDPOINT = '/v2/notifications/email';
     
-    public function expectEmailRequestWithSuccessResponse()
+    public function expectEmailRequestWithSuccessResponse($body = '{"foo":"bar"}')
     {
         $this->expectARequestToRemoteServiceWithAResponse(
             Phiremock::on(
                 A::postRequest()->andUrl(Is::equalTo(self::EMAIL_ENDPOINT))
             )->then(
-                Respond::withStatusCode(200)->andBody('{"foo":"bar"}')
+                Respond::withStatusCode(200)->andBody($body)
             )
         );
     }
     
-    public function expectEmailRequestWithFailureResponse()
+    public function expectEmailRequestWithFailureResponse(int $code = 401, string $body = '{"errors":[{"error":"foo", "message":"bar"}]}')
     {
         $this->expectARequestToRemoteServiceWithAResponse(
             Phiremock::on(
                 A::postRequest()->andUrl(Is::equalTo(self::EMAIL_ENDPOINT))
             )->then(
-                Respond::withStatusCode(401)->andBody('{"errors":[{"error":"foo", "message":"bar"}]}')
+                Respond::withStatusCode($code)->andBody($body)
             )
         );
     }
