@@ -56,15 +56,4 @@ class Notify extends \Codeception\Module\Phiremock
     {
         $this->seeRemoteServiceReceived($numberOfRequests, A::postRequest()->andUrl(Is::equalTo(self::EMAIL_ENDPOINT)));
     }
-    
-    private function expectEmailRequestWithResponse(int $responseCode)
-    {
-        $this->expectARequestToRemoteServiceWithAResponse(
-            Phiremock::on(
-                A::postRequest()->andUrl(Is::equalTo(self::EMAIL_ENDPOINT))
-            )->then(
-                Respond::withStatusCode($responseCode)->andBody('{"foo":"bar"}')
-            )
-        );
-    }
 }
