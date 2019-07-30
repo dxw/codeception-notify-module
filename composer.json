@@ -1,13 +1,22 @@
 {
   "name": "robjs/codeception-notify-module",
   "description": "Assertions for acceptance testing an application that uses Gov.uk Notify",
+  "version": "0.1.0",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Rob Skilling",
+      "email": "rob@dxw.com",
+      "homepage": "https://dxw.com"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "dxw\\Codeception\\Module\\": "src"
     }
   },
   "require": {
-    "php": "^7.0",
+    "php": ">=7.0",
     "mcustiel/phiremock-codeception-extension": "*"
   },
   "minimum-stability": "dev",
