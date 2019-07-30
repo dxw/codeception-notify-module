@@ -1,7 +1,7 @@
 {
   "name": "dxw/codeception-notify-module",
   "description": "Codeception module for acceptance testing an application that uses Gov.uk Notify",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "authors": [
     {
