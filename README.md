@@ -2,7 +2,7 @@
 
 A Codeception module that extends [phiremock-codeception-extension](https://github.com/mcustiel/phiremock-codeception-extension) for testing applications that call GOV.UK Notify. 
 
-The Phiremock extension is included in this module, so does not need to be installed separately.
+The Phiremock extension is loaded as a Composer dependency, so does not need to be installed separately.
 
 ## Installation
 
